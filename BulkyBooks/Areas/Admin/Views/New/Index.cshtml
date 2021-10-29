@@ -1,0 +1,67 @@
+﻿@model BulkyBook.Models.Resp
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Latest news";
+}
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        tfoot {
+            display: table-header-group;
+        }
+    </style>
+</head>
+
+<div class="row p-3 border">
+    <div class="col-8 pt-4">
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for="SearchBy"></label>
+            </div>
+            <div class="col-4">
+                <input asp-for="SearchBy" id="txtSearchNews" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for="SourceName"></label>
+            </div>
+            <div class="col-4">
+                <input asp-for="SourceName" id="txtSourceName" class="form-control" />
+            </div>
+            <div class="col-4">
+                <button style="width:auto" type="submit" class="btn btn-success form-control" id="searchNews"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+    <br />
+
+</div>
+<div class="row p-3 border">
+    <table id="tblNewsData" class="table table-striped table-bordered" style="width:100%">
+        <thead class="thead-dark">
+            <tr class="table-info">
+                <th>Source</th>
+                <th>Tittle</th>
+                <th>Description</th>
+                <th>url</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th id="source"></th>
+                <th id="tittle"></th>
+                <th id="description"></th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+@section Scripts{
+
+    <script src="~/js/news.js"></script>
+}

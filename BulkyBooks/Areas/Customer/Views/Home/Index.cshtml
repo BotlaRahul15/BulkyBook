@@ -1,0 +1,8 @@
+﻿@model IEnumerable<BulkyBook.Models.Product>
+@{ 
+    ViewBag.Title = "Home";
+}
+<partial name="_ProductList" model="@Model" />
+@section Scripts{ 
+    <script src="~/js/home.js"></script>
+}
